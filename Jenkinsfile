@@ -32,7 +32,7 @@ pipeline
           }
       }
 
-   stage('Test code')
+   stage('Please package the code')
      {
          steps
           {
