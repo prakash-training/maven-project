@@ -16,20 +16,21 @@ pipeline
          steps
           {
              withMaven(jdk: 'localjdk', maven: 'maven-demo')
-          {
+            {
               sh 'mvn compile'
-}
-
+            }
+          }
+     }
    stage('Test code')
      {
          steps
           {
              withMaven(jdk: 'localjdk', maven: 'maven-demo')
-          {
+            {
               sh 'mvn test'
-}
-        }
-     }
+            }
+          }
+      }
      
     }  
 }
