@@ -10,6 +10,17 @@ pipeline
          git 'https://github.com/prakash-training/maven-project'
         }
      }
+
+     stage('Compile code')
+     {
+         steps
+          {
+             withMaven(jdk: 'localjdk', maven: 'maven-demo')
+          {
+              sh 'mvn compile'
+}
+        }
+     }
      
     }  
 }
