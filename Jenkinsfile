@@ -31,6 +31,19 @@ pipeline
             }
           }
       }
+
+   stage('Test code')
+     {
+         steps
+          {
+             withMaven(jdk: 'localjdk', maven: 'maven-demo')
+            {
+              sh 'mvn package'
+            }
+          }
+      }
+
+
      
     }  
 }
