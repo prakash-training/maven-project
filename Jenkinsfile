@@ -35,12 +35,9 @@ agent any
      stage('Push Docker Image')
        {
          steps
-         {           
-                    
-          withCredentials([usernameColonPassword(credentialsId: 'docker_id', variable: '')])
-           {
+         {          
            sh 'docker push pcb9393/dockerdemo:01'
-           }
+           
           }
          }
          
