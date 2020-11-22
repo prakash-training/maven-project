@@ -37,7 +37,7 @@ agent any
          steps
          {           
                     
-          withCredentials([usernameColonPassword(credentialsId: 'docker_id', variable: 'docker_id')])
+          withCredentials([usernameColonPassword(credentialsId: 'docker_id', variable: '')])
            {
            sh 'docker push pcb9393/dockerdemo:01'
            }
