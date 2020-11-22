@@ -40,7 +40,7 @@ agent any
           withCredentials([usernameColonPassword(credentialsId: 'docker_id', variable: 'docker-creds')]) 
   
               {
-                sh "docker login -u pcb9393 -p ${docker_id}"
+                sh "docker login -u pcb9393 -p ${docker-creds}"
                 
               }
            sh 'docker push pcb9393/dockerdemo:01'
