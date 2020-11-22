@@ -32,6 +32,18 @@ agent any
          }
        } 
     
+     stage('Push Docker Image')
+       {
+         steps
+         {
+          withCredentials([usernameColonPassword(credentialsId: 'docker_id', variable: 'docker_id')]) 
+              {
+                sh "docker login -u pcb9393 -p ${docker_id}"
+                sh 'docker push pcb9393/dockerdemo:01'
+              }
+         }
+       }  
+      
       
     }
 
