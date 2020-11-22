@@ -35,10 +35,12 @@ agent any
      stage('Push Docker Image')
        {
          steps
-         {
-          withCredentials([string(credentialsId: 'docker_id', variable: 'docker_id')]) 
+         {           
+                    
+          withCredentials([usernamePassword(credentialsId: 'docker_id', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) 
+  
               {
-                sh "docker login -u pcb9393 -p ${docker_id}"
+                sh "docker login -u DOCKER_USERNAME -p ${DOCKER_PASSWORD}"
                 
               }
            sh 'docker push pcb9393/dockerdemo:01'
