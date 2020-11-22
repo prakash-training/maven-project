@@ -29,7 +29,7 @@ agent any
        {
          steps
          {
-          
+          sh 'docker build -t pcb9393/dockerdemo:01 .'
          }
        } 
     
