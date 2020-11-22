@@ -36,13 +36,15 @@ agent any
        {
          steps
          {
-          withCredentials([usernameColonPassword(credentialsId: 'docker_id', variable: 'docker_id')]) 
+          withCredentials([string(credentialsId: 'docker_id', variable: 'docker_id')]) 
               {
-                sh "docker login --user pcb9393 --passwd ${docker_id}"
-                sh 'docker push pcb9393/dockerdemo:01'
+                sh "docker login -u pcb9393 -p ${docker_id}"
+                
               }
+           sh 'docker push pcb9393/dockerdemo:01'
+          }
          }
-       }  
+         
       
       
     }
