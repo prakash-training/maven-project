@@ -36,9 +36,9 @@ agent any
        {
          steps
          {
-         withCredentials([string(credentialsId: 'docker-cicd', variable: 'docker-text')])
+         withCredentials([string(credentialsId: 'docker-cicd', variable: 'docker_id')])
            {
-             sh "docker login -u pcb9393 -p ${docker-text}"
+             sh "docker login -u pcb9393 -p ${docker_id}"
            }
                  
            sh 'docker push pcb9393/dockerdemo:01'
