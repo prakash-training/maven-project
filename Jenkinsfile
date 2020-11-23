@@ -36,9 +36,9 @@ agent any
        {
          steps
          {
-         withCredentials([usernameColonPassword(credentialsId: 'dockerhub_account', variable: 'dockerhub_id')])
+         withCredentials([string(credentialsId: 'Docker-cicd', variable: 'docker _creds')])
            {
-             sh 'docker login -u pcb9393 -p ${dockerhub_id}'
+             sh 'docker login -u pcb9393 -p ${docker _creds}'
            }
                  
            sh 'docker push pcb9393/dockerdemo:01'
